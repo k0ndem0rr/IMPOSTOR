@@ -127,11 +127,14 @@ function toggleHalloweenMode() {
     const body = document.body;
     const isHalloween = body.classList.toggle('halloween-mode');
     const btn = document.querySelector('.mode-toggle-btn');
+    const input = document.querySelector('.palabras-input');
 
     if (isHalloween) {
         btn.innerHTML = '🌞 Modo Día'; // Cambia el texto del botón al activar
+        input.value = 'DUENDE, FANTASMA, CALABAZA, MURCIÉLAGO, ESQUELETO';
     } else {
         btn.innerHTML = '🎃 Modo Halloween'; // Cambia el texto del botón al desactivar
+        input.value = 'GATO, PERRO, MESA, SILLA, COCHE';
     }
 
     // Opcional: Guardar la preferencia del usuario en el almacenamiento local
