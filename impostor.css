@@ -102,3 +102,65 @@ button:hover {
     background: #ccc;
     margin: 20px 0;
 }
+
+/* --- ESTILOS PARA EL BOTÓN DE MODO --- */
+.mode-toggle-btn {
+    width: auto;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+    background-color: var(--accent-color);
+    border-radius: 25px;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+.mode-toggle-btn:hover {
+    background-color: #2980b9;
+}
+
+/* --- VARIABLES Y ESTILOS DEL MODO HALLOWEEN (DARK MODE) --- */
+
+/* Transiciones para suavizar el cambio */
+body, .card, .input-field, button {
+    transition: all 0.5s ease-in-out;
+}
+
+body.halloween-mode {
+    --primary-color: #f39c12; /* Naranja Calabaza (Texto) */
+    --accent-color: #9b59b6; /* Morado Bruja (Botones) */
+    --background-color: #121212; /* Negro muy oscuro (Fondo) */
+    --card-background: #1c1c1c; /* Gris oscuro (Fondo de tarjeta) */
+    --red-alert: #e74c3c;
+    --green-success: #2ecc71;
+    color: var(--primary-color);
+}
+
+/* Adaptación de elementos específicos en modo Halloween */
+body.halloween-mode h1 {
+    color: var(--primary-color); /* Asegura que el título sea naranja */
+}
+
+body.halloween-mode .card {
+    border: 1px solid rgba(243, 156, 18, 0.3); /* Borde naranja sutil */
+    box-shadow: 0 4px 15px rgba(243, 156, 18, 0.2); /* Sombra naranja */
+}
+
+body.halloween-mode .input-field {
+    background-color: #2c2c2c; /* Fondo de inputs más oscuro */
+    border-color: #555;
+    color: #eee;
+}
+
+body.halloween-mode button {
+    background-color: var(--accent-color); /* Morado para el botón */
+}
+body.halloween-mode button:hover {
+    background-color: #8e44ad;
+}
+
+/* Sobreescribir los colores de rol */
+body.halloween-mode #resultadoJuego h1[style*="color: red"] {
+    color: var(--red-alert) !important; /* Rojo Impostor */
+}
+body.halloween-mode #resultadoJuego h1[style*="color: green"] {
+    color: var(--primary-color) !important; /* Naranja Palabra */
+}

@@ -119,3 +119,35 @@ function pasarAlSiguiente() {
         `;
     }
 }
+
+/**
+ * Alterna el modo Halloween (Dark Mode) añadiendo o quitando una clase al body.
+ */
+function toggleHalloweenMode() {
+    const body = document.body;
+    const isHalloween = body.classList.toggle('halloween-mode');
+    const btn = document.querySelector('.mode-toggle-btn');
+
+    if (isHalloween) {
+        btn.innerHTML = '🌞 Modo Día'; // Cambia el texto del botón al activar
+    } else {
+        btn.innerHTML = '🎃 Modo Halloween'; // Cambia el texto del botón al desactivar
+    }
+
+    // Opcional: Guardar la preferencia del usuario en el almacenamiento local
+    localStorage.setItem('halloweenMode', isHalloween ? 'on' : 'off');
+}
+
+/**
+ * Función para cargar la preferencia del modo al iniciar la página.
+ */
+function loadModePreference() {
+    if (localStorage.getItem('halloweenMode') === 'on') {
+        // No usamos toggle, ya que queremos asegurarnos de que se aplica y se actualiza el botón
+        document.body.classList.add('halloween-mode');
+        document.querySelector('.mode-toggle-btn').innerHTML = '🌞 Modo Día';
+    }
+}
+
+// Llama a la función al cargar la página para aplicar la preferencia guardada
+window.onload = loadModePreference;
