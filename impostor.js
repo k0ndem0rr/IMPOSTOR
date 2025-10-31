@@ -158,3 +158,12 @@ function loadModePreference() {
 
 // Llama a la función al cargar la página para aplicar la preferencia guardada
 window.onload = loadModePreference;
+
+// Registrar Service Worker para PWA (si está disponible)
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+        navigator.serviceWorker.register('./sw.js')
+            .then(function(reg) { console.log('ServiceWorker registrado con scope:', reg.scope); })
+            .catch(function(err) { console.warn('Registro de ServiceWorker falló:', err); });
+    });
+}
