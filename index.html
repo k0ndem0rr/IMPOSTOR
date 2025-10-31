@@ -13,9 +13,16 @@
         <button class="mode-toggle-btn" onclick="toggleHalloweenMode()">🎃 Modo Halloween</button>
         <div id="configuracion" class="card">
             <h2>Configura la Partida</h2>
-            
-            <label for="jugadoresInput">Número de Jugadores (Mín. 3):</label>
-            <input type="number" id="jugadoresInput" min="3" value="5" class="input-field">
+            <div id ="numJugadores" class="num-jugadores">
+                <div>
+                    <label for="jugadoresInput">Número de Jugadores (Mín. 3):</label>
+                    <input type="number" id="jugadoresInput" min="3" value="5" class="input-field">
+                </div>
+                <div>
+                    <label for="impostoresInput">Número de Impostores (Opcional):</label>
+                    <input type="number" id="impostoresInput" min="0" class="input-field">
+                </div>
+            </div>
 
             <label for="palabrasInput">Palabras Posibles:</label>
             <textarea class="palabras-input input-field" id="palabrasInput" rows="4">GATO, PERRO, MESA, SILLA, COCHE</textarea>

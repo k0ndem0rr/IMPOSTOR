@@ -25,11 +25,13 @@ function cargarJuego() {
     // 1. OBTENER DATOS DEL HTML 
     const inputPalabras = document.getElementById('palabrasInput').value;
     const inputNumJugadores = document.getElementById('jugadoresInput').value;
+    const inputNumImpostores = (document.getElementById('impostoresInput')) ? document.getElementById('impostoresInput').value : '0';
     
     // VALIDACIÓN BÁSICA
     palabrasDisponibles = inputPalabras.split(',').map(p => p.trim()).filter(p => p.length > 0);
     numJugadores = parseInt(inputNumJugadores);
-    
+    numImpostores = parseInt(inputNumImpostores);
+
     if (palabrasDisponibles.length === 0 || isNaN(numJugadores) || numJugadores < 3) {
         alert("Por favor, introduce al menos una palabra y un número válido de jugadores (Mín. 3).");
         return;
@@ -56,7 +58,9 @@ function iniciarRonda() {
         
         // 3. ASIGNAR EL ROL DE IMPOSTOR
         // (Selecciona un número de jugador entre 0 y numJugadores - 1)
-        indicesImpostores = obtenerNumerosAleatorios(Math.ceil(numJugadores / 5), numJugadores);
+        numImpostores = numImpostores > 0 ? numImpostores : Math.floor(numJugadores / 5);
+        if (numImpostores < 1) numImpostores = 1; // Al menos 1 impostor
+        indicesImpostores = obtenerNumerosAleatorios(numImpostores, numJugadores);
         
         // 4. PREPARAR PANTALLA PARA EL PRIMER JUGADOR
         jugadorActual = 0;
