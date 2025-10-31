@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego del Impostor de Palabras</title>
+    <link rel="stylesheet" href="impostor.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🤫 El Impostor 🤫</h1>
+        
+        <div id="configuracion" class="card">
+            <h2>Configura la Partida</h2>
+            
+            <label for="jugadoresInput">Número de Jugadores (Mín. 3):</label>
+            <input type="number" id="jugadoresInput" min="3" value="5" class="input-field">
+            
+            <label for="palabrasInput">Palabras Posibles (Separadas por comas, ej: GATO, PERRO, MESA):</label>
+            <textarea id="palabrasInput" rows="4" class="input-field">TARTA, HELADO, PIZZA, HAMBURGUESA, PAELLA, ENSALADA, MACARRONES</textarea>
+            
+            <button onclick="cargarJuego()" id="btnCargar">Cargar Configuración</button>
+        </div>
+
+        <div id="resultadoJuego" class="card hidden">
+            <h2>Configuración lista. Pulsa Iniciar.</h2>
+            <button onclick="iniciarRonda()">Iniciar Ronda</button>
+        </div>
+    </div>
+
+    <script src="impostor.js"></script>
+</body>
+</html>

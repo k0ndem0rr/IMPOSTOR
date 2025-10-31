@@ -1,0 +1,104 @@
+:root {
+    --primary-color: #2c3e50; /* Azul oscuro */
+    --accent-color: #3498db; /* Azul brillante */
+    --background-color: #ecf0f1; /* Gris claro */
+    --card-background: #ffffff; /* Blanco */
+    --red-alert: #e74c3c;
+    --green-success: #2ecc71;
+}
+
+/* Estilos Generales y Responsive */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px; /* Ancho máximo para el contenido en escritorio */
+    text-align: center;
+}
+
+h1 {
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    font-size: 2em;
+}
+
+/* Estilos de Tarjeta (Card) */
+.card {
+    background-color: var(--card-background);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Elementos de Formulario */
+label {
+    display: block;
+    text-align: left;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.input-field {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #bdc3c7;
+    border-radius: 6px;
+    box-sizing: border-box; /* Incluye padding en el ancho */
+    font-size: 1em;
+}
+textarea.input-field {
+    resize: vertical;
+}
+
+/* Botones */
+button {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    width: 100%; /* Botón grande para móvil */
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* Clases de utilidad */
+.hidden {
+    display: none;
+}
+
+/* Estilos para la Pantalla de Resultado */
+#resultadoJuego h1 {
+    font-size: 3em;
+    margin: 15px 0;
+    text-transform: uppercase;
+}
+#resultadoJuego p {
+    font-size: 1.2em;
+}
+#resultadoJuego hr {
+    border: 0;
+    height: 1px;
+    background: #ccc;
+    margin: 20px 0;
+}
