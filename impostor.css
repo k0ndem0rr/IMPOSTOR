@@ -58,6 +58,8 @@ label {
     border-radius: 6px;
     box-sizing: border-box; /* Incluye padding en el ancho */
     font-size: 1em;
+    background-color: var(--card-background); /* Evita fondo blanco por defecto */
+    color: var(--primary-color);
 }
 .palabras-input {
     width: 100%;
@@ -67,6 +69,8 @@ label {
     border-radius: 6px;
     box-sizing: border-box; /* Incluye padding en el ancho */
     font-size: 1em;
+    background-color: var(--card-background); /* Asegura mismo fondo que otras inputs */
+    color: var(--primary-color);
 }
 textarea.input-field {
     resize: vertical;
