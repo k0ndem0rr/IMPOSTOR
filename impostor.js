@@ -132,13 +132,17 @@ function toggleHalloweenMode() {
     const isHalloween = body.classList.toggle('halloween-mode');
     const btn = document.querySelector('.mode-toggle-btn');
     const input = document.querySelector('.palabras-input');
+    const themeMeta = document.getElementById('theme-color-meta');
 
     if (isHalloween) {
         btn.innerHTML = '🌞 Modo Día'; // Cambia el texto del botón al activar
         input.value = 'DUENDE, FANTASMA, CALABAZA, MURCIÉLAGO, ESQUELETO';
+        // Actualizar color de la barra (iOS/Android modernos respetan theme-color)
+        if (themeMeta) themeMeta.setAttribute('content', '#9b59b6'); // morado
     } else {
         btn.innerHTML = '🎃 Modo Halloween'; // Cambia el texto del botón al desactivar
         input.value = 'GATO, PERRO, MESA, SILLA, COCHE';
+        if (themeMeta) themeMeta.setAttribute('content', '#3498db'); // color por defecto
     }
 
     // Opcional: Guardar la preferencia del usuario en el almacenamiento local
@@ -153,6 +157,9 @@ function loadModePreference() {
         // No usamos toggle, ya que queremos asegurarnos de que se aplica y se actualiza el botón
         document.body.classList.add('halloween-mode');
         document.querySelector('.mode-toggle-btn').innerHTML = '🌞 Modo Día';
+        // Asegurar que el meta theme-color refleje el modo
+        const themeMeta = document.getElementById('theme-color-meta');
+        if (themeMeta) themeMeta.setAttribute('content', '#9b59b6');
     }
 }
 

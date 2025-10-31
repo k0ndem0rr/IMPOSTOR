@@ -8,7 +8,12 @@
     <link rel="stylesheet" href="impostor.css">
     <!-- PWA manifest and theme -->
     <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#3498db">
+    <!-- theme-color dinámico (se actualiza desde JS). id añadido para selección fácil -->
+    <meta name="theme-color" id="theme-color-meta" content="#3498db">
+    <!-- iOS web app preferences -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- Note: iOS doesn’t allow arbitrary colors for status bar; theme-color is used in modern iOS versions -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
 </head>
 <body>
    <div class="container">
